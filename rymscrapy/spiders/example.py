@@ -11,7 +11,8 @@ class ExampleSpider(scrapy.Spider):
     #pages = range(1, 1)  #one page is 40 albums per year
     years = range(2002, 2022)  # a nice 20 year span
       # ["https://rateyourmusic.com/charts/top/album/" + str(year) + "/" + str(page)
-    start_urls = ["https://proxy.scrapeops.io/v1/?api_key=83309231-525f-4b5b-9516-a36d3f191302&url=https%3A%2F%2Frateyourmusic.com%2Fcharts%2Ftop%2Falbum%2F" + str(year) + "%2F"
+    #put your proxy in here - rateyourmusic.com usually bans ip's that are scraping its pages - i used proxy.scrapeops.io for testing this and it worked
+    start_urls = [proxy + str(year) + "%2F"
         for year in years]
     #to not get banned again // didnt work anyway rofl
     # random.seed()
